@@ -1,0 +1,141 @@
+/* ==UserStyle==
+@name         RetailPath tweaks
+@namespace    https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
+@homepageURL  https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
+@version      0.3.0
+@license      MIT
+@description  Enhance the UX of RetailPath
+@author       fmm (https://openusercss.org/profile/5b3bffc47118660b00458065)
+@preprocessor less
+
+@var          checkbox useSpreads "Show as spreads in Pages tab" 1
+@var          checkbox colorCodedStatus "Colour coded page status" 1
+@var          checkbox keepWhitespace "Restore original whitespace in comments/annotations" 1
+@var          checkbox showTransparency "Show transparency backdrop on image hover" 1
+@var          checkbox minimiseAnnotations "Minimise completed annotations (requires the JS RetailPath tweaks addon)" 1
+==/UserStyle== */
+@-moz-document domain("metcash.retailpath.com.au") {
+
+	/*********************************
+	 * Display pages as proper spreads
+	 *********************************/
+	body when (@useSpreads =1) {
+		#pageList .page:first-child {
+			margin-left: 485px;
+		}
+	}
+
+
+	/************************************
+    * Highlight pages that are WithStudio
+    *************************************/
+	body when (@colorCodedStatus =1) {
+		#pageList .icon {
+			&.status {
+				position: relative;
+				background-image: url(http://metcash.retailpath.com.au/WebObjects/Metcash.woa/Contents/WebServerResources/iconStatusNew.png);
+
+				&:after {
+					content: '';
+					display: block;
+					top: -8px;
+					bottom: -8px;
+					left: -100px;
+					right: -10px;
+					position: absolute;
+					pointer-events: none;
+				}
+			}
+
+			&:after {
+				background-image: linear-gradient(to right,
+				hsla(50, 100%, 50%, 0),
+				hsla(50, 100%, 50%, 0.3));
+			}
+
+			&.WithStudio:after {
+				background-image: linear-gradient(to right,
+				hsla(0, 100%, 50%, 0),
+				hsla(0, 100%, 50%, 0.3));
+			}
+
+			&.AwaitingApproval:after {
+				background-image: linear-gradient(to right,
+				hsla(120, 100%, 50%, 0),
+				hsla(120, 100%, 50%, 0.3));
+			}
+
+			&.InitialBrief:after {
+				background-image: linear-gradient(to right,
+				hsla(210, 100%, 50%, 0),
+				hsla(210, 100%, 50%, 0.3));
+			}
+		}
+	}
+
+
+	/***********************************************
+     * Keep whitespace formatting in different areas
+     ***********************************************/
+	body when (@keepWhitespace =1) {
+		.annotation .text,
+		#containerBrief,
+		.event .note {
+			white-space: pre-line;
+		}
+	}
+
+
+	/***********************************************************************************
+	 * Add checkerboard pattern behind images on hover to show presence of clipping path
+	 ***********************************************************************************/
+	body when (@showTransparency =1) {
+		#ContainerElementEditModal .previewList .preview,
+		#ContainerElementEditModal .previewIconList .previewIcon,
+		.changeLogView td .present a,
+		.previewList li,
+		td.preview {
+			position: relative;
+			z-index: 1;
+
+			&:before {
+				display: block;
+				content: '';
+				opacity: 0;
+				background: url(data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAABY0lEQVR4nO3ZsQnEMBAAwffjJlWh+lMFbkCh8WIzE4rLlgPBHWut386cc/s+xjB/4/x/+8pjBIgJEBMgJkBMgJgAsfMt/+WvztuAmAAxAWICxASICRATIHa4B7TzNiAmQEyAmAAxAWICxASIuQfE8zYgJkBMgJgAMQFiAsQEiLkHxPM2ICZATICYADEBYgLEBIi5B8TzNiAmQEyAmAAxAWICxASIuQfE8zYgJkBMgJgAMQFiAsQEiLkHxPM2ICZATICYADEBYgLEBIi5B8TzNiAmQEyAmAAxAWICxASIuQfE8zYgJkBMgJgAMQFiAsQEiLkHxPM2ICZATICYADEBYgLEBIi5B8TzNiAmQEyAmAAxAWICxASIuQfE8zYgJkBMgJgAMQFiAsQEiLkHxPM2ICZATICYADEBYgLEBIi5B8TzNiAmQEyAmAAxAWICxASIuQfE8zYgJkBMgJgAMQFiAsQEiF29LY9wn4wHRgAAAABJRU5ErkJggg==) repeat;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				z-index: -1;
+			}
+
+			&:hover:before {
+				opacity: 0.5;
+			}
+		}
+
+		.changeLogView td .present a {
+			display: inline-block;
+		}
+
+		.changeLogView td .present img {
+			margin: 10px;
+		}
+	}
+
+	/********************************
+	 * Minimise completed annotations
+	 ********************************/
+	body when (@minimiseAnnotations =1) {
+		.annotation.completed {
+			cursor: pointer;
+		}
+
+		.annotation.hidden > span {
+			height: 37px;
+			overflow: hidden;
+		}
+	}
+}
