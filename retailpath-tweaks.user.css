@@ -2,7 +2,7 @@
 @name         RetailPath tweaks
 @namespace    https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
 @homepageURL  https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
-@version      0.3.0
+@version      0.4.0
 @license      MIT
 @description  Enhance the UX of RetailPath
 @author       fmm (https://openusercss.org/profile/5b3bffc47118660b00458065)
@@ -34,14 +34,15 @@
 			&.status {
 				position: relative;
 				background-image: url(http://metcash.retailpath.com.au/WebObjects/Metcash.woa/Contents/WebServerResources/iconStatusNew.png);
-
+				padding-right: 25px;
+				
 				&:after {
 					content: '';
 					display: block;
-					top: -8px;
+					top: -10px;
 					bottom: -8px;
-					left: -100px;
-					right: -10px;
+					right: 0px;
+                    left: -100px;
 					position: absolute;
 					pointer-events: none;
 				}
@@ -71,6 +72,18 @@
 				hsla(210, 100%, 50%, 0.3));
 			}
 		}
+		
+		.header {
+            padding-right: 0px;
+            
+            & .statusText {
+                margin-right: -10px;
+            }
+        }
+        
+        .header .right.column {
+            padding-right: 0;
+        }
 	}
 
 
