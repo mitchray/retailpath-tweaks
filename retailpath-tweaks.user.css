@@ -13,6 +13,7 @@
 @var          checkbox keepWhitespace "Restore original whitespace in comments/annotations" 1
 @var          checkbox showTransparency "Show transparency backdrop on image hover" 1
 @var          checkbox minimiseAnnotations "Minimise completed annotations (requires the JS RetailPath tweaks addon)" 1
+@var          checkbox replaceLogo "Use updated Metcash logo" 1
 ==/UserStyle== */
 @-moz-document domain("metcash.retailpath.com.au") {
 
