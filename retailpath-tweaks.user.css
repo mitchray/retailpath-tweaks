@@ -2,7 +2,7 @@
 @name         RetailPath tweaks
 @namespace    https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
 @homepageURL  https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
-@version      0.5.1
+@version      0.5.2
 @license      MIT
 @description  Enhance the UX of RetailPath
 @author       fmm (https://openusercss.org/profile/5b3bffc47118660b00458065)
@@ -161,9 +161,9 @@
 			display: block;
 			box-sizing: border-box;
 			background: url("https://mars-metcdn-com.global.ssl.fastly.net/content/uploads/sites/101/2017/11/26152025/metcash-ltd-small-logo-right.png") no-repeat;
-			width: 250px;
+			width: 228px;
 			height: 100px;
-			padding-left: 250px;
+			padding-left: 228px;
 			margin-top: -3px;
 			pointer-events: none;
 		}        
