@@ -2,7 +2,7 @@
 @name         RetailPath tweaks
 @namespace    https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
 @homepageURL  https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
-@version      0.5.2
+@version      0.6.0
 @license      MIT
 @description  Enhance the UX of RetailPath
 @author       fmm (https://openusercss.org/profile/5b3bffc47118660b00458065)
@@ -10,6 +10,7 @@
 
 @var          checkbox useSpreads "Show as spreads in Pages tab" 1
 @var          checkbox colorCodedStatus "Colour coded page status" 1
+@var          checkbox biggerThumbnails "Bigger page thumbnails" 1
 @var          checkbox keepWhitespace "Restore original whitespace in comments/annotations" 1
 @var          checkbox showTransparency "Show transparency backdrop on image hover" 1
 @var          checkbox minimiseAnnotations "Minimise completed annotations (requires the JS RetailPath tweaks addon)" 1
@@ -17,6 +18,10 @@
 ==/UserStyle== */
 @-moz-document domain("metcash.retailpath.com.au") {
 
+	.page .preview {
+		background-color: hsla(0,0%,100%,100%) !important;
+    	}
+	
 	/*********************************
 	 * Display pages as proper spreads
 	 *********************************/
@@ -87,6 +92,32 @@
         }
 	}
 
+	/***********************************************
+     	* Bigger page thumbnails
+     	***********************************************/
+	body when (@biggerThumbnails =1) {
+		.page {
+	   	    height: 180px;
+		}
+
+		.page .content {
+		    padding-left: 35px;
+		}
+
+		.page .preview {
+		    height: 179px;
+		    width: 135px;
+		}
+
+		.page .preview img {
+		    height: auto;
+		    width: 100%;
+		}
+
+		.pageBorder {
+		    height: 179px;
+		}
+	}
 
 	/***********************************************
      * Keep whitespace formatting in different areas
