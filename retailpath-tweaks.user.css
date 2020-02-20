@@ -2,7 +2,7 @@
 @name         RetailPath tweaks
 @namespace    https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
 @homepageURL  https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
-@version      0.6.0
+@version      0.6.1
 @license      MIT
 @description  Enhance the UX of RetailPath
 @author       fmm (https://openusercss.org/profile/5b3bffc47118660b00458065)
@@ -115,6 +115,10 @@
 		}
 
 		.pageBorder {
+		    height: 179px;
+		}
+		
+		.page .infoBar {
 		    height: 179px;
 		}
 	}
