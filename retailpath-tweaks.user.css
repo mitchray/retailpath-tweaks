@@ -2,7 +2,7 @@
 @name         RetailPath tweaks
 @namespace    https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
 @homepageURL  https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
-@version      0.6.2
+@version      0.6.3
 @license      MIT
 @description  Enhance the UX of RetailPath
 @author       fmm (https://openusercss.org/profile/5b3bffc47118660b00458065)
@@ -77,6 +77,22 @@
 				hsla(210, 100%, 50%, 0),
 				hsla(210, 100%, 50%, 0.3));
 			}
+		}
+		
+		#pageList .page.enhanced {
+		    background-color: hsla(50, 100%, 50%, 0.15);
+
+		    &.WithStudio {
+			background-color: hsla(0, 100%, 50%, 0.1);
+		    }
+
+		&.AwaitingApproval {
+			background-color: hsla(120, 100%, 50%, 0.15);
+		    }
+
+		&.InitialBrief {
+			background-color: hsla(210, 100%, 50%, 0.1);
+		    }
 		}
 		
 		.header {
