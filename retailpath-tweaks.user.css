@@ -2,7 +2,7 @@
 @name         RetailPath tweaks
 @namespace    https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
 @homepageURL  https://raw.githubusercontent.com/mitchray/retailpath-tweaks/master/retailpath-tweaks.user.css
-@version      0.6.3
+@version      0.6.4
 @license      MIT
 @description  Enhance the UX of RetailPath
 @author       fmm (https://openusercss.org/profile/5b3bffc47118660b00458065)
@@ -18,7 +18,8 @@
 ==/UserStyle== */
 @-moz-document domain("metcash.retailpath.com.au") {
 
-	.page .preview img {
+	.page .preview img,
+	.approvalCard .preview img {
 		background-color: hsla(0,0%,100%,100%) !important;
     	}
 	
